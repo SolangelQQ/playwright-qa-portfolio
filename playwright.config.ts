@@ -10,7 +10,7 @@ export default defineConfig({
 
   use: {
     // This is the website we'll be testing
-    baseURL: 'https://practicetestautomation.com',
+    baseURL: 'https://www.saucedemo.com',
 
     // Always open the browser visibly while learning
     headless: false,
