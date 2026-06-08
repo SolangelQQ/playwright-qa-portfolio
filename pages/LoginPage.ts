@@ -5,10 +5,15 @@ export class LoginPage {
   private page: Page;
 
   // The selectors — defined in ONE place
-  private usernameInput = '#username';
-  private passwordInput = '#password';
-  private submitButton = '#submit';
+  // private usernameInput = '#username';
+  // private passwordInput = '#password';
+  // private submitButton = '#submit';
   private errorMessage = '#error';
+
+  // ✅ These work for saucedemo.com
+  private usernameInput = '[data-test="username"]';
+  private passwordInput = '[data-test="password"]';
+  private submitButton = '[data-test="login-button"]';
 
   // Constructor — runs when we create a LoginPage
   constructor(page: Page) {
@@ -17,7 +22,7 @@ export class LoginPage {
 
   // Actions — things the Login Page can DO
   async goto() {
-    await this.page.goto('/practice-test-login');
+    await this.page.goto('/');
   }
 
   async fillUsername(username: string) {
