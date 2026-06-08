@@ -9,13 +9,7 @@ export default defineConfig({
   reporter: 'html',
 
   use: {
-    // This is the website we'll be testing
-    baseURL: 'https://www.saucedemo.com',
-
-    // Always open the browser visibly while learning
     headless: false,
-
-    // Record a trace when a test fails — helps you debug
     trace: 'on-first-retry',
   },
 

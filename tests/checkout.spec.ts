@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { SaucedemoLoginPage } from '../pages/SaucedemoLoginPage';
 import { ProductsPage } from '../pages/ProductsPage';
 import { CartPage } from '../pages/CartPage';
 import { CheckoutInfoPage } from '../pages/CheckoutInfoPage';
@@ -13,7 +13,7 @@ test('complete checkout flow', async ({ page }) => {
   const checkout ='[data-test="checkout"]'
   const paymentInfo = '[data-test="payment-info-label'
   // Step 1: Login
-  const loginPage = new LoginPage(page);
+  const loginPage = new SaucedemoLoginPage(page);
   await loginPage.goto();
   await loginPage.fillUsername('standard_user');
   await loginPage.fillPassword('secret_sauce');

@@ -1,20 +1,19 @@
 import { Page } from '@playwright/test';
 
-export class LoginPage {
+export class SaucedemoLoginPage {
   private page: Page;
 
-  private usernameInput = '#username';
-  private passwordInput = '#password';
-  private submitButton = '#submit';
-  private errorMessage = '#error';
+  private usernameInput = '[data-test="username"]';
+  private passwordInput = '[data-test="password"]';
+  private submitButton = '[data-test="login-button"]';
 
   constructor(page: Page) {
     this.page = page;
   }
 
   async goto() {
-    await this.page.goto('https://practicetestautomation.com/practice-test-login');
-  }
+    await this.page.goto('https://www.saucedemo.com');
+    }
 
   async fillUsername(username: string) {
     await this.page.locator(this.usernameInput).fill(username);
@@ -26,9 +25,5 @@ export class LoginPage {
 
   async clickSubmit() {
     await this.page.locator(this.submitButton).click();
-  }
-
-  async getErrorMessage() {
-    return this.page.locator(this.errorMessage);
   }
 }
